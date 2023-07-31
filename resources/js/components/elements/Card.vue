@@ -1,45 +1,46 @@
 <template>
-	<div
-		:class="[
-			'group/card',
+    <div
+        :class="[
+            'group/card',
 
-			'p-[32px]',
-			'cursor-pointer',
-			'rounded-[8px]',
-			'overflow-hidden',
+            'md:p-8',
+            'max-sm:p-4',
+            'cursor-pointer',
+            'rounded-[8px]',
+            'overflow-hidden',
 
-			'transition-shadow',
-			'hover:shadow-cart',
-			'duration-200',
+            'transition-shadow',
+            'hover:shadow-cart',
+            'duration-200',
 
-			'relative',
+            'relative',
 
-			'after:top-0',
-			'after:left-0',
-			'after:right-0',
-			'after:bottom-0',
-			'after:absolute',
-			'after:opacity-0',
-			'after:transition',
-			'after:duration-200',
-			'after:bg-cart',
-			'hover:after:opacity-100',
-			...customClasses
-		]"
-		class="after:content-['']"
-	>
-		<slot></slot>
-	</div>
+            'after:top-0',
+            'after:left-0',
+            'after:right-0',
+            'after:bottom-0',
+            'after:absolute',
+            'after:opacity-0',
+            'after:transition',
+            'after:duration-200',
+            'after:bg-cart',
+            'hover:after:opacity-100',
+            ...customClasses,
+        ]"
+        class="after:content-['']"
+    >
+        <slot></slot>
+    </div>
 </template>
 
 <script setup>
 //--- / Props
 const props = defineProps({
-	customClasses: {
-		type: Array,
-		required: false,
-		default: []
-	}
+    customClasses: {
+        type: Array,
+        required: false,
+        default: [],
+    },
 });
 //--- Props /
 </script>

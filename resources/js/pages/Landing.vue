@@ -1,75 +1,93 @@
 <template>
     <Layout>
-        <Menu class="fixed top-[80px] left-[65px]" :menu="menu" />
+        <div class="max-lg:flex">
+            <Menu
+                class="md:fixed md:top-[80px] md:left-[65px] max-lg:pt-8 max-lg:pl-4"
+                :menu="menu"
+            />
 
-        <main class="pt-[80px] pb-8">
-            <section
-                id="main"
-                class="container flex gap-[30px] max-w-[1078px] mx-auto"
-            >
-                <img class="pl-[32px]" src="/face_photo.png" alt="Face" />
-                <div class="flex flex-col gap-[8px]">
-                    <span
-                        class="font-semibold text-white tracking-widest text-2xl"
-                        >@zerocomputer</span
-                    >
-                    <h1 class="font-bold text-white tracking-wide text-5xl">
-                        Никита Сарычев
-                    </h1>
-                    <span
-                        class="font-semibold text-white tracking-wide text-2xl"
-                    >
-                        Full-Stack разработчик
-                    </span>
-                    <p
-                        class="font-regular text-body tracking-wide text-xl max-w-[445px]"
-                    >
-                        Занимаюсь полным циклом разработки различных
-                        веб-приложений, начиная от дизайна и реализации
-                        клиентской части, заканчивая серверной части и API.
-                    </p>
-                </div>
+            <main class="md:pt-[80px] max-sm:pt-8 pb-8">
+                <section
+                    id="main"
+                    class="container lg:flex xl:gap-[30px] lg:max-w-[1078px] md:mx-auto max-sm:flex max-sm:flex-col max-sm:p-4 max-lg:grid max-lg:grid-cols-2 max-lg:gap-4"
+                >
+                    <!-- Photo -->
+                    <img
+                        class="xl:pl-8 max-lg:w-full"
+                        src="/face_photo.png"
+                        alt="Face"
+                    />
 
-                <div class="flex flex-col gap-[8px]">
-                    <span
-                        class="font-semibold text-white tracking-widest text-2xl"
-                        >Кратко о себе</span
-                    >
-                    <p
-                        class="font-regular text-body tracking-wide text-xl max-w-[350px]"
-                    >
-                        Вернемся в 2014 год, первое касание с IT - попытка
-                        создания простеньких игр при помощи Unity3D. Было
-                        <span class="text-white font-medium"
-                            >интересно создавать что-то, осязаемое</span
-                        >. По сей день этот интерес актуален, однако
-                        <span class="text-white font-medium"
-                            >нынешние проекты интегрированы в мою жизнь</span
-                        >.
-                    </p>
-                </div>
-            </section>
+                    <!-- Main -->
+                    <div class="flex flex-col gap-[8px]">
+                        <span
+                            class="font-semibold text-white tracking-widest text-2xl"
+                            >@zerocomputer</span
+                        >
+                        <h1 class="font-bold text-white tracking-wide text-5xl">
+                            Никита Сарычев
+                        </h1>
+                        <span
+                            class="font-semibold text-white tracking-wide text-2xl"
+                        >
+                            Full-Stack разработчик
+                        </span>
+                        <p
+                            class="font-regular text-body tracking-wide text-xl max-w-[445px]"
+                        >
+                            Занимаюсь полным циклом разработки различных
+                            веб-приложений, начиная от дизайна и реализации
+                            клиентской части, заканчивая серверной части и API.
+                        </p>
+                    </div>
 
-            <section
-                id="experience"
-                class="mt-20 container max-w-[1078px] mx-auto"
-            >
-                <h2 class="text-white font-semibold text-2xl mb-4 pl-[32px]">
-                    Опыт работы
-                </h2>
+                    <!-- About -->
+                    <div
+                        class="flex flex-col gap-[8px] max-lg:col-start-1 max-lg:col-end-3 max-lg:col-span-2"
+                    >
+                        <span
+                            class="font-semibold text-white tracking-widest text-2xl max-lg:pl-8"
+                            >Кратко о себе</span
+                        >
+                        <p
+                            class="font-regular text-body tracking-wide text-xl xl:max-w-[350px]"
+                        >
+                            Вернемся в 2014 год, первое касание с IT - попытка
+                            создания простеньких игр при помощи Unity3D. Было
+                            <span class="text-white font-medium"
+                                >интересно создавать что-то, осязаемое</span
+                            >. По сей день этот интерес актуален, однако
+                            <span class="text-white font-medium"
+                                >нынешние проекты интегрированы в мою
+                                жизнь</span
+                            >.
+                        </p>
+                    </div>
+                </section>
 
-                <CardExperience
-                    v-for="experienceRow in experience.reverse()"
-                    :key="experienceRow"
-                    :time-interval="experienceRow.timeInterval"
-                    :company="experienceRow.company"
-                    :department="experienceRow.department"
-                    :post="experienceRow.post"
-                    :history="experienceRow.history"
-                    :tags="experienceRow.tags"
-                />
-            </section>
-        </main>
+                <section
+                    id="experience"
+                    class="md:mt-20 max-sm:mt-8 container max-w-[1078px] mx-auto max-lg:container"
+                >
+                    <h2
+                        class="text-white font-semibold text-2xl md:mb-4 md:pl-8 max-sm:p-4"
+                    >
+                        Опыт работы
+                    </h2>
+
+                    <CardExperience
+                        v-for="experienceRow in experience.reverse()"
+                        :key="experienceRow"
+                        :time-interval="experienceRow.timeInterval"
+                        :company="experienceRow.company"
+                        :department="experienceRow.department"
+                        :post="experienceRow.post"
+                        :history="experienceRow.history"
+                        :tags="experienceRow.tags"
+                    />
+                </section>
+            </main>
+        </div>
     </Layout>
 </template>
 <script setup>

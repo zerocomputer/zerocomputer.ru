@@ -1,19 +1,15 @@
 <template>
     <Layout>
         <div class="max-lg:flex">
-            <Menu
-                class="md:fixed md:top-[80px] md:left-[65px] max-lg:pt-8 max-lg:pl-4"
-                :menu="menu"
-            />
-
-            <main class="md:pt-[80px] max-sm:pt-8 pb-8">
+            <main class="md:pt-[80px] max-sm:pt-8 pb-8 max-lg:p-4">
+                <!-- Main Info -->
                 <section
                     id="main"
-                    class="container lg:flex xl:gap-[30px] lg:max-w-[1078px] md:mx-auto max-sm:flex max-sm:flex-col max-sm:p-4 max-lg:grid max-lg:grid-cols-2 max-lg:gap-4"
+                    class="container xl:flex xl:gap-[30px] xl:max-w-[1078px] xl:mx-auto max-sm:flex max-sm:flex-col max-xl:p-4 max-xl:px-8 max-xl:grid max-xl:grid-cols-2 max-xl:gap-4"
                 >
                     <!-- Photo -->
                     <img
-                        class="xl:pl-8 max-lg:w-full"
+                        class="xl:pl-8 max-xl:w-full"
                         src="/face_photo.png"
                         alt="Face"
                     />
@@ -43,10 +39,9 @@
 
                     <!-- About -->
                     <div
-                        class="flex flex-col gap-[8px] max-lg:col-start-1 max-lg:col-end-3 max-lg:col-span-2"
+                        class="flex flex-col gap-[8px] max-xl:col-start-1 max-xl:col-end-3 max-xl:col-span-2"
                     >
-                        <span
-                            class="font-semibold text-white tracking-widest text-2xl max-lg:pl-8"
+                        <span class="font-semibold text-white text-2xl"
                             >Кратко о себе</span
                         >
                         <p
@@ -65,6 +60,7 @@
                     </div>
                 </section>
 
+                <!-- Experience -->
                 <section
                     id="experience"
                     class="md:mt-20 max-sm:mt-8 container max-w-[1078px] mx-auto max-lg:container"
@@ -88,6 +84,46 @@
                 </section>
             </main>
         </div>
+
+        <!-- Footer -->
+        <footer
+            :class="[
+                'container',
+                'text-left',
+                'flex',
+                'gap-8',
+                'mb-8',
+                'max-lg:flex-col',
+                'max-lg:p-8',
+                'max-lg:gap-4',
+                'max-xl:p-8',
+                'xl:p-4',
+                'lg:mx-auto',
+                'lg:max-w-[1078px]',
+            ]"
+        >
+            <div>
+                <a
+                    href="email:i@zerocomputer.ru"
+                    target="_blank"
+                    class="text-accent font-light text-2xl"
+                >
+                    i@zerocomputer.ru
+                </a>
+
+                <Menu :menu="menu" />
+            </div>
+
+            <p class="text-white font-bold text-2xl max-w-lg max-lg:text-xl">
+                РАЗРАБОТАН НА LARAVEL + INERTIA (VUE) + TAILWIND.
+                <a
+                    href="https://github.com/zerocomputer/zerocomputer.ru"
+                    target="_blank"
+                    class="text-accent"
+                    >ОТКРЫТЫЙ ИСХОДНЫЙ КОД.</a
+                >
+            </p>
+        </footer>
     </Layout>
 </template>
 <script setup>
@@ -103,10 +139,12 @@ const menu = [
     {
         link: "https://github.com/zerocomputer/",
         icon: IconorGithubContact,
+        text: "Github",
     },
     {
         link: "https://t.me/zerocomputer",
         icon: IconorTelegramContact,
+        text: "Telegram",
     },
 ];
 const experience = [
